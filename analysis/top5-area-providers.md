@@ -2,34 +2,46 @@
 
 Organisations **currently delivering social & affordable rent** (including Affordable Rent at 80% of market) in each of the top 5 areas. Most are **not-for-profit Registered Providers (RPs)** or council **ALMOs** — these are the dominant operators of this stream — with for-profit build-to-rent (BTR) noted where present. Verified via public/council sources (see report Sources). This maps *who is active*, not an endorsement or a claim of current tenders — verify pipeline/JV appetite directly before acting.
 
+**Legend for the tables:** G/V/C = RSH governance / viability / consumer grades (1 = strongest). `n/v` = not verified in this pass. `—` = not applicable (ALMO — the council holds the provider registration; or an under-1,000-home RP not individually graded; or a for-profit outside the G/V regime). `*` = widely-reported round figure, confirm. **Grades change — re-check the current RSH regulatory judgement before relying on any grade.**
+
 ## 1. Stoke-on-Trent
-- **Aspire Housing** — North Staffs/Stoke & Newcastle-under-Lyme RP developing new affordable homes; in merger talks with whg (would create a ~32,000-home Midlands group).
-- **Honeycomb Group** (incl. **Staffs Housing**) — RP/charity providing affordable housing and support across Staffordshire, Cheshire and Derbyshire; Stoke-based.
-- **Stoke-on-Trent Housing Society** — charitable HA, 621 homes, actively builds new homes across the city.
-- **EPIC Housing** — community RP, ~1,400 homes at affordable rents across Stoke, Newcastle-under-Lyme and the Staffordshire Moorlands.
+| Organisation | Type | Homes (approx) | G | V | C | Notes |
+|---|---|---|---|---|---|---|
+| **Aspire Housing** | RP | ~9,300 | G1 | V2 | C1 | North Staffs/Stoke & Cheshire; developing new affordable homes; in merger talks with whg (~32,000-home group). RJ Nov 2025. |
+| **Honeycomb Group** (incl. Staffs Housing) | RP/charity | ~3,118 | n/v | n/v | n/v | Affordable housing & support across Staffs/Cheshire/Derbyshire. RSH judgement Oct 2025 (grades not captured here). |
+| **Stoke-on-Trent Housing Society** | RP (charitable) | 621 | — | — | — | Under 1,000 homes: not individually graded. Actively builds new homes in the city. |
+| **EPIC Housing** | RP (community) | ~1,400 | n/v | n/v | n/v | Affordable rents across Stoke, Newcastle-under-Lyme, Staffs Moorlands. |
 
 ## 2. Kingston upon Hull & East Riding
-- **Riverside** — large national RP with dedicated Hull operations (social/affordable rent plus care & support).
-- **Pickering & Ferens Homes (PFH)** — ~1,400 homes across Hull & East Riding (predominantly older-persons affordable housing).
-- **Hull Churches Housing Association** — ~500 homes for social rent & shared ownership in Hull and adjoining East Riding.
-- **Sanctuary** — large national RP with a Hull office/presence providing affordable rented homes.
+| Organisation | Type | Homes (approx) | G | V | C | Notes |
+|---|---|---|---|---|---|---|
+| **Riverside** | RP (large national) | ~75,000* | G1 | V2 | n/v | Dedicated Hull operations (rent + care). RJ Mar 2024: G1 upgrade, V2 retained. |
+| **Pickering & Ferens Homes (PFH)** | RP | ~1,400 | n/v | n/v | n/v | Older-persons affordable housing across Hull & East Riding. |
+| **Hull Churches Housing Association** | RP (independent) | ~500 | — | — | — | Under 1,000 homes: not individually graded. Social rent & shared ownership. |
+| **Sanctuary** | RP (large national) | ~120,000* | G1 | V2 | C2 | Hull office/presence. C2 from planned inspection Jan 2025. |
 
 ## 3. Teesside (Middlesbrough / Stockton / Redcar)
-- **Thirteen Group** — Teesside-based; ~34,000 homes mostly in Teesside — the largest local social landlord and an active developer.
-- **Beyond Housing** — major RP across Redcar & Cleveland / Tees Valley; core partner in Tees Valley Homefinder.
-- **North Star Housing Group** — Stockton-based RP; core partner in Tees Valley Homefinder and the Tees Valley Housing Partnership.
-- **The PRS REIT** — for-profit single-family BTR active in Teesside — the commercial side of the same rented-housing stream.
+| Organisation | Type | Homes (approx) | G | V | C | Notes |
+|---|---|---|---|---|---|---|
+| **Thirteen Group** | RP | ~34,000 | G1 | V1 | C1 | Teesside's largest social landlord and an active developer. C1 from inspection Mar 2025. |
+| **Beyond Housing** | RP | ~15,350 | G1 | V1 | n/v | Redcar/Tees Valley; core Tees Valley Homefinder partner. G1 upgrade Mar 2024. |
+| **North Star Housing Group** | RP | ~4,000 | G1 | V1 | n/v | Stockton-based; Tees Valley partnership. RJ Dec 2024. |
+| **The PRS REIT** | For-profit BTR | ~5,000+ (n/v) | — | — | — | For-profit provider outside the standard G/V regime; single-family BTR active in Teesside. |
 
 ## 4. Wolverhampton / Black Country
-- **whg (Walsall Housing Group)** — large Midlands RP (Walsall HQ) delivering new affordable/social homes (e.g. Royal Hospital site: 154 homes for affordable rent & shared ownership).
-- **Bromford** — Wolverhampton-HQ RP and major West Midlands developer via the "Homes for the West Midlands" partnership (including a 100% affordable Black Country scheme).
-- **Black Country Housing Group (BCHG)** — Black Country RP providing affordable rented homes and support.
-- **Wolverhampton Homes** — arm's-length management organisation (ALMO) managing the City of Wolverhampton Council's social rented stock.
+| Organisation | Type | Homes (approx) | G | V | C | Notes |
+|---|---|---|---|---|---|---|
+| **whg (Walsall Housing Group)** | RP (large) | ~21,000 | G1 | V1 | n/v | Walsall HQ. Royal Hospital scheme = 154 affordable-rent/shared-ownership homes; reports top grade after inspection. |
+| **Bromford** | RP (large/developer) | ~47,000 | G1 | V1 | n/v | Wolverhampton HQ; major developer ("Homes for the West Midlands"). LiveWest merger reported early 2026 — combined scale to confirm. |
+| **Black Country Housing Group (BCHG)** | RP | >2,000 | G1 | V1 | n/v | Black Country RP providing affordable rented homes and support. |
+| **Wolverhampton Homes** | Council ALMO | ~21,000 (managed) | — | — | n/v | Manages City of Wolverhampton Council stock; council holds the provider registration; subject to consumer standards. |
 
 ## 5. Doncaster
-- **St Leger Homes of Doncaster** — ALMO managing ~20,000 homes for City of Doncaster Council — the dominant social landlord; runs the Choice Based Lettings scheme.
-- **Together Housing** — large RP delivering new affordable homes in Doncaster (2024 scheme with Housing 21 as part of a diverse development).
-- **Housing 21** — retirement/older-persons RP partnering on affordable-homes delivery in Doncaster.
+| Organisation | Type | Homes (approx) | G | V | C | Notes |
+|---|---|---|---|---|---|---|
+| **St Leger Homes of Doncaster** | Council ALMO | ~20,000 (managed) | — | — | n/v | ALMO for City of Doncaster Council (council holds registration; subject to consumer standards). Runs Choice Based Lettings. |
+| **Together Housing** | RP (large) | ~36,000 | G1 | V2 | n/v | Delivering new affordable homes in Doncaster (2024 scheme with Housing 21). Viability regraded V1→V2. |
+| **Housing 21** | RP (older-persons) | ~23,300 | G1 | V1 | C1 | Retirement/ExtraCare across ~240 LAs; partnering on affordable-homes delivery in Doncaster. |
 
 ---
 
