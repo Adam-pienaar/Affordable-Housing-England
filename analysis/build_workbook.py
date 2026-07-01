@@ -290,5 +290,83 @@ ws5.cell(row=nr5, column=1,
 ws5.merge_cells(start_row=nr5, start_column=1, end_row=nr5, end_column=3)
 ws5.row_dimensions[nr5].height = 56
 
+# ============================ Sheet 6: Area providers ========================
+ws6 = wb.create_sheet("Top 5 Area Providers")
+title(ws6, "Operators active in this revenue stream - Top 5 areas", 1, 5)
+ws6.cell(row=2, column=1,
+         value="Registered providers (RPs), council ALMOs and for-profit build-to-rent (BTR) "
+               "operators currently delivering social & affordable rent (incl. Affordable Rent "
+               "at 80% of market) in each area. Most are not-for-profit RPs - the dominant "
+               "operators of this stream. Verified via public/council sources (Sept 2024-2026).").font = NOTE_FONT
+ws6.merge_cells("A2:E2")
+ws6.row_dimensions[2].height = 42
+
+h6 = ["Area", "Organisation", "Type", "Relevance to this revenue stream"]
+r6 = [
+    # Stoke-on-Trent
+    ["Stoke-on-Trent", "Aspire Housing", "RP (housing association)",
+     "North Staffs/Stoke & Newcastle-under-Lyme RP developing new affordable homes; in merger talks with whg (would create ~32,000-home Midlands group)."],
+    ["Stoke-on-Trent", "Honeycomb Group (incl. Staffs Housing)", "RP / charity",
+     "Provides affordable housing and specialist support across Staffordshire, Cheshire and Derbyshire; Stoke-based."],
+    ["Stoke-on-Trent", "Stoke-on-Trent Housing Society", "RP (charitable HA)",
+     "621 homes across the city; actively builds new homes to meet local housing need."],
+    ["Stoke-on-Trent", "EPIC Housing", "RP (community HA)",
+     "~1,400 homes at affordable rents across Stoke, Newcastle-under-Lyme and Staffordshire Moorlands."],
+    # Hull & East Riding
+    ["Kingston upon Hull & East Riding", "Riverside", "RP (large national HA)",
+     "Dedicated Hull operations delivering social/affordable rent plus care & support."],
+    ["Kingston upon Hull & East Riding", "Pickering & Ferens Homes (PFH)", "RP (housing association)",
+     "~1,400 homes across Hull & East Riding (predominantly older-persons affordable housing)."],
+    ["Kingston upon Hull & East Riding", "Hull Churches Housing Association", "RP (independent HA)",
+     "~500 homes for social rent & shared ownership in Hull and adjoining East Riding."],
+    ["Kingston upon Hull & East Riding", "Sanctuary", "RP (large national HA)",
+     "National RP with a Hull office/presence providing affordable rented homes."],
+    # Teesside
+    ["Teesside (Middlesbrough/Stockton/Redcar)", "Thirteen Group", "RP (housing association)",
+     "Teesside-based; ~34,000 homes mostly in Teesside - the largest local social landlord and an active developer."],
+    ["Teesside (Middlesbrough/Stockton/Redcar)", "Beyond Housing", "RP (housing association)",
+     "Major RP across Redcar & Cleveland / Tees Valley; core partner in Tees Valley Homefinder."],
+    ["Teesside (Middlesbrough/Stockton/Redcar)", "North Star Housing Group", "RP (housing association)",
+     "Stockton-based RP; core partner in Tees Valley Homefinder and the Tees Valley Housing Partnership."],
+    ["Teesside (Middlesbrough/Stockton/Redcar)", "The PRS REIT", "For-profit build-to-rent",
+     "For-profit single-family BTR active in Teesside - example of the commercial side of the same rented-housing stream."],
+    # Wolverhampton / Black Country
+    ["Wolverhampton / Black Country", "whg (Walsall Housing Group)", "RP (large HA)",
+     "Large Midlands RP (Walsall HQ) delivering new affordable/social homes (e.g. Royal Hospital site: 154 homes for affordable rent & shared ownership)."],
+    ["Wolverhampton / Black Country", "Bromford", "RP (large HA / developer)",
+     "Wolverhampton-HQ RP; major West Midlands developer via the 'Homes for the West Midlands' partnership (100% affordable Black Country scheme)."],
+    ["Wolverhampton / Black Country", "Black Country Housing Group (BCHG)", "RP (housing association)",
+     "Black Country RP providing affordable rented homes and support."],
+    ["Wolverhampton / Black Country", "Wolverhampton Homes", "Council ALMO",
+     "Arm's-length organisation managing the City of Wolverhampton Council's social rented stock."],
+    # Doncaster
+    ["Doncaster", "St Leger Homes of Doncaster", "Council ALMO",
+     "Manages ~20,000 homes for City of Doncaster Council - the dominant social landlord; runs the Choice Based Lettings scheme."],
+    ["Doncaster", "Together Housing", "RP (large HA)",
+     "Delivering new affordable homes in Doncaster (2024 scheme with Housing 21 as part of a diverse development)."],
+    ["Doncaster", "Housing 21", "RP (older-persons HA)",
+     "Retirement/older-persons RP partnering on affordable-homes delivery in Doncaster."],
+]
+nr6 = write_table(ws6, 4, h6, r6, widths=[34, 34, 26, 66], wrap_cols=(1, 2, 3, 4))
+# shade alternating area blocks for readability
+block_starts = {}
+for i, row in enumerate(r6):
+    block_starts.setdefault(row[0], []).append(i)
+shade = False
+seen = set()
+for i, row in enumerate(r6):
+    if row[0] not in seen:
+        seen.add(row[0]); shade = not shade
+    if shade:
+        for c in range(1, 5):
+            ws6.cell(row=5 + i, column=c).fill = PatternFill("solid", fgColor="F2F2F2")
+ws6.freeze_panes = "A5"
+ws6.cell(row=nr6 + 1, column=1,
+         value="Note: this maps who is active in the stream, not an endorsement or a claim of "
+               "current tenders. RP = Registered Provider; ALMO = Arm's Length Management "
+               "Organisation. Verify current pipeline/JV appetite directly before acting.").font = NOTE_FONT
+ws6.merge_cells(start_row=nr6 + 1, start_column=1, end_row=nr6 + 1, end_column=4)
+ws6.row_dimensions[nr6 + 1].height = 40
+
 wb.save(OUT)
 print("wrote", OUT)
