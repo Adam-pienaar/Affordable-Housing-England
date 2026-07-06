@@ -80,8 +80,8 @@ Market median rent, same window (ONS PRMS, Oct 2022–Sep 2023): **1-bed £425 �
 
 - LHA sits very close to the market median (2-bed alignment ≈ £474/£495 = **0.96**) — a strong convergence signal.
 - Affordable Rent (80% of market): 2-bed ≈ £396, **below** the £474 LHA — a benefit-backed tenant can cover it.
-- Against the national social-rent benchmark (£113.69/wk ≈ £493/mo), social rent is a **high share (~0.99)** of Hull's ≈£498 mean market rent, i.e. "not wildly detached."
-- **Measured convergence rank: #5 of 97 areas scored** (score 0.933). Hull is genuinely near the top, confirming the pattern read.
+- Hull's **local** general-needs social rent (2-bed £94/wk ≈ £407/mo, RSH 2024/25) is ~0.82 of its £495 market — attached, though Hull's social rents are among the lowest in England, so slightly more detached than, say, Teesside's.
+- **Measured convergence rank: #12 of 97 areas scored** (score 0.875, fully-local run). Hull is genuinely top-tier; Teesside towns (Hartlepool #2, Redcar #3, Middlesbrough #5) edge above it because their social rents are a higher share of market. See `MEASURED-RESULTS.md`.
 
 Hull illustrates the pattern; the towns below share the same structural drivers.
 

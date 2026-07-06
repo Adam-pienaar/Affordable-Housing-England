@@ -401,26 +401,26 @@ if os.path.exists(CSVP):
     ws7 = wb.create_sheet("Measured Ranking")
     title(ws7, "MEASURED convergence ranking (from supplied ONS + LHA + RSH data)", 1, 9)
     ws7.cell(row=2, column=1,
-             value="Computed by run_measured_ranking.py. Market rent = ONS PRMS median by LA "
-                   "(Oct 2022-Sep 2023); LHA = DWP/VOA Apr-2024 base (monthly); social = England "
-                   "benchmark GBP113.69/wk (per-LA not supplied). Rents matched to the LHA base "
-                   "window = structural convergence, not today's live gap. geo: exact = name match, "
-                   "curated = our LA->BRMA map (dominant BRMA). 97 areas scored; top 30 shown.").font = NOTE_FONT
+             value="Computed by run_measured_ranking.py. Market = ONS PRMS median by LA "
+                   "(Oct 2022-Sep 2023); LHA = DWP/VOA Apr-2024 base (monthly); social = RSH "
+                   "2024/25 LOCAL per-bed general-needs rent (92/97 areas; 5 national fallback). "
+                   "Rents matched to the LHA base window = structural convergence, not today's "
+                   "live gap. geo: exact = name match, curated = our LA->BRMA map. 97 areas; top 30 shown.").font = NOTE_FONT
     ws7.merge_cells("A2:I2")
     ws7.row_dimensions[2].height = 56
     with open(CSVP, newline="") as fh:
         rd = list(csv.DictReader(fh))
     cols = [("rank", "Rank", 6), ("area", "Area (LA)", 30), ("brma", "BRMA", 20),
-            ("geo", "Geo", 9), ("sample_min", "Sample", 8),
-            ("mkt_1", "Mkt 1b", 8), ("mkt_2", "Mkt 2b", 8), ("mkt_3", "Mkt 3b", 8),
-            ("lha_2", "LHA 2b", 8), ("alignment", "Align", 8),
-            ("social_attach", "SocAtt", 8), ("compression", "Compr", 8), ("score", "Score", 8)]
+            ("geo", "Geo", 9), ("soc_src", "Soc src", 8), ("sample_min", "Sample", 8),
+            ("mkt_2", "Mkt 2b", 8), ("lha_2", "LHA 2b", 8), ("soc_2", "Soc 2b", 8),
+            ("alignment", "Align", 8), ("social_attach", "SocAtt", 8),
+            ("compression", "Compr", 8), ("score", "Score", 8)]
     headers = [c[1] for c in cols]
     rows = [[(_num(r[c[0]])) for c in cols] for r in rd[:30]]
     nr7 = write_table(ws7, 4, headers, rows,
                       widths=[c[2] for c in cols], wrap_cols=(2, 3), highlight_top=5)
     for rr in range(5, 5 + len(rows)):          # centre numeric columns
-        for cc in list(range(4, 14)):
+        for cc in list(range(4, len(cols) + 1)):
             ws7.cell(row=rr, column=cc).alignment = CENTER
     ws7.freeze_panes = "A5"
     ws7.cell(row=nr7, column=1,
