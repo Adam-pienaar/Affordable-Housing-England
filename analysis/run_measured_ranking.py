@@ -70,6 +70,11 @@ LA_TO_BRMA = {
     "Sandwell": "Black Country", "Walsall": "Black Country",
 }
 
+# Curated LAs that genuinely span several BRMAs (one dominant BRMA used) -> flagged
+# 'curated-approx'. The rest of the curated map was web-verified (East Lancs, Central
+# Lancs, Black Country, Teesside, Tyneside, Staffordshire North, etc.) -> 'curated'.
+APPROX = {"County Durham UA", "East Riding of Yorkshire UA", "Mansfield", "Ashfield"}
+
 
 def norm(s: str) -> str:
     s = str(s).lower()
@@ -164,7 +169,8 @@ def main():
                               m3["count"].get(area) if area in m3.index else 0] if x)
         # resolve BRMA
         if area in LA_TO_BRMA:
-            brma, how = LA_TO_BRMA[area], "curated"
+            brma = LA_TO_BRMA[area]
+            how = "curated-approx" if area in APPROX else "curated"
         elif norm(area) in lha_norm:
             brma, how = lha_norm[norm(area)], "exact"
         else:

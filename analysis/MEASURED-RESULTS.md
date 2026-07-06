@@ -96,7 +96,7 @@ Convergence alone would crown East Lancashire; investment needs demand too. Bala
 
 ## Caveats (read before quoting)
 - **Time base:** rents are Oct 2022–Sep 2023 (matched to the LHA base). Today's live market-vs-LHA gap is wider.
-- **Geography:** LA→BRMA is exact-match + a curated candidate map; multi-BRMA LAs use the dominant BRMA (`geo=curated`). An official lookup would refine this and extend beyond 97 areas.
+- **Geography:** LA→BRMA is 56 exact name-matches + 37 **web-verified** curated mappings (`geo=curated`) + 4 genuinely multi-BRMA LAs using their dominant BRMA (`geo=curated-approx`: County Durham, East Riding, Mansfield, Ashfield). The curated clusters were confirmed against published BRMA definitions — East Lancs (Blackburn/Burnley/Hyndburn/Pendle/Rossendale), Central Lancs (Preston/Chorley/South Ribble), Black Country (Wolverhampton/Dudley/Sandwell/Walsall), and Teesside/Tyneside (confirmed by the LHA file itself — no separate Hartlepool/Middlesbrough/Gateshead BRMA exists). No mapping errors were found, so the ranking is unchanged by verification. An official national LA→BRMA lookup would still be needed to extend beyond the 97 scored areas.
 - **Social rent:** now **local per-bed** for 92/97 areas; 5 use the England fallback (flagged `soc_src=national`) — treat those (incl. Barrow #6, Scarborough #14) as slightly indicative.
 - **Sample sizes:** ONS suppresses thin samples; `sample_min` is in the CSV — treat small-sample areas cautiously.
 - **What this is:** a structural convergence screen, not a demand, yield or asset-quality model — pair it with Phase 7 of `METHODOLOGY.md`.
