@@ -90,6 +90,9 @@ REGION_ABBR = {"Yorkshire and the Humber": "Yorks & Humber", "North East": "Nort
                "North West": "North West", "West Midlands": "West Midlands",
                "East Midlands": "East Midlands", "South East": "South East",
                "South West": "South West", "East of England": "East of England"}
+REGION_FIX = {"Barrow-in-Furness": "North West", "Scarborough": "Yorks & Humber",
+              "Northampton": "East Midlands", "Harrogate": "Yorks & Humber",
+              "Mendip": "South West"}
 
 
 def table(doc, headers, rows, widths=None, header_fill="1F3B57", zebra="EEF3F7", fs=9):
@@ -170,7 +173,9 @@ h1(doc, "Measured results — Top 20 areas")
 headers = ["#", "Area", "Region", "Mkt 2-bed", "LHA 2-bed", "Social 2-bed", "Score"]
 rows = []
 for _, r in df.head(20).iterrows():
-    rows.append([int(r["rank"]), clean(r["area"]), REGION_ABBR.get(r["region"], r["region"] or "—"),
+    rraw = r["region"] if pd.notna(r["region"]) else ""
+    region = REGION_ABBR.get(rraw, rraw) if rraw else REGION_FIX.get(r["area"], "—")
+    rows.append([int(r["rank"]), clean(r["area"]), region,
                  f"£{int(r['mkt_2'])}", f"£{int(r['lha_2'])}", f"£{int(r['soc_2'])}", f"{r['score']:.3f}"])
 table(doc, headers, rows, widths=[0.3, 1.75, 1.35, 0.75, 0.75, 0.85, 0.6], fs=8.5)
 para(doc, "Rents matched to the LHA reference window (Oct 2022–Sep 2023); measures structural convergence, "

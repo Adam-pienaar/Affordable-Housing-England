@@ -11,6 +11,7 @@ stronger for affordable-housing development or investment.
 | File | What it is |
 |---|---|
 | [`analysis/uk-rent-convergence-analysis.md`](analysis/uk-rent-convergence-analysis.md) | The report: mechanism, convergence metric, ranked areas (top 15–25), top-5 opportunities, risks, sources. |
+| [`analysis/UK-Rent-Convergence-Briefing.pdf`](analysis/UK-Rent-Convergence-Briefing.pdf) / [`.docx`](analysis/UK-Rent-Convergence-Briefing.docx) | **Investor briefing** (~7pp): key finding, Top 20, Top 5 picks, operators + RSH grades, four charts. PDF to share, Word to edit. |
 | [`analysis/MEASURED-RESULTS.md`](analysis/MEASURED-RESULTS.md) | **The measured ranking** computed from the real supplied datasets (97 areas), how it revises the pattern-based read, the mechanism the data exposes, and caveats. |
 | [`analysis/run_measured_ranking.py`](analysis/run_measured_ranking.py) | Pipeline that produces the measured ranking from `analysis/data/` → `measured_convergence_ranking.csv`. |
 | [`analysis/data/`](analysis/data/) | The source files used: ONS PRMS (Oct22–Sep23), DWP/VOA LHA (2026/27), RSH RP briefing (2024/25). Open Government Licence. |

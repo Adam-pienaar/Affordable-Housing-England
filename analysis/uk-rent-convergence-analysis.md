@@ -91,6 +91,8 @@ Hull illustrates the pattern; the towns below share the same structural drivers.
 
 Ranked by **convergence strength combined with demand/shortage** (investable convergence). All are low-cost, comparatively compressed markets in the regions the mechanism predicts. Treat the ordering as directional — run the script for exact scores.
 
+> **Now measured:** these areas were subsequently scored on the real ONS + LHA + RSH data. The *pattern* held (all low-cost North/Midlands) but the *order* changed — East Lancashire and Teesside lead, Black Country is weaker on pure convergence. See the measured Top 20 in `MEASURED-RESULTS.md` and the `Measured Ranking` tab of the workbook.
+
 | # | Area (BRMA / LA) | Region | Why rents converge | Demand drivers | Key risks |
 |---|---|---|---|---|---|
 | 1 | **Stoke-on-Trent** | W Mids | Very low, tightly-clustered rents; LHA sits close to market; Affordable Rent ≈ LHA | Affordable-city in-migration, ceramics/logistics jobs, city-centre regeneration | Pockets of low-demand terraced stock; deprivation; over-reliance on benefit tenants |
@@ -122,19 +124,19 @@ Ranked by **convergence strength combined with demand/shortage** (investable con
 
 ## 6. Top 5 strongest investment opportunities
 
-Selected for the best **combination** of tight rent convergence, robust and structurally-supported demand, active regeneration/employment momentum, and manageable risk.
+> **This is the measured order** (from `MEASURED-RESULTS.md`, computed on the real ONS + LHA + RSH data), superseding the earlier pattern-based ranking. Selected for the best **combination** of tight rent convergence (measured score) and robust, structurally-supported demand. Key revision: **Teesside now leads** and **Black Country drops out** of the top 5 on pure convergence (its case is demand, not alignment).
 
-1. **Stoke-on-Trent (W Mids).** The archetypal converged market: very low, tightly-clustered 1–3 bed rents mean LHA sits close to market and Affordable Rent (80%) lands near LHA, so benefit-backed tenancies are reliably coverable. Regeneration and in-migration of affordability-seekers support demand. *Watch:* concentration of weak-demand terraced stock — buy in sound sub-markets.
+1. **Teesside — Hartlepool / Redcar / Middlesbrough (NE).** Elite convergence (measured #2 / #3 / #5) — social rent is a high share of a very low market rent — plus the clearest *new-demand* story via Teesworks/Freeport and energy investment. *Watch:* keep close to the regeneration footprint; avoid deprived peripheral estates.
 
-2. **Kingston upon Hull & East Riding (Yorks & Humber).** The one fully-sourced anchor (§4): LHA ≈ market across 1–3 beds, with social rent a high share of market. The Humber energy/port cluster and the university underpin demand. *Watch:* flood-zone and older-stock demand pockets.
+2. **Kingston upon Hull (Yorks & Humber).** Measured #12: LHA ≈ market across 1–3 beds; large, deep market; Humber energy/port cluster and the university underpin demand. *Watch:* flood-zone and older-stock pockets; social rents are among the lowest in England.
 
-3. **Teesside — Middlesbrough / Stockton / Redcar (NE).** England's lowest-rent tier, so alignment on all four layers is strong, plus the clearest *new-demand* story of the group via Teesworks/Freeport and energy investment. *Watch:* keep close to the regeneration footprint; avoid deprived peripheral estates.
+3. **Doncaster (Yorks & Humber).** Measured #22: low, well-aligned rents with a genuine logistics/rail employment engine and Sheffield city-region spillover — convergence *and* a growth driver. *Watch:* post-industrial low-demand micro-markets.
 
-4. **Wolverhampton / Black Country (W Mids).** Low-to-moderate, compressed rents combined with some of the largest benefit-backed demand and waiting lists in England, inside a major conurbation labour market. Depth of demand lowers void risk. *Watch:* stock condition and higher management intensity.
+4. **Sunderland (NE).** Measured #19: strong convergence plus Riverside regeneration and automotive employment; deep social-rented market (Gentoo). *Watch:* peripheral estates weaker; single-employer exposure.
 
-5. **Doncaster (Yorks & Humber).** Low, well-aligned rents with a genuine logistics/rail employment engine and Sheffield city-region spillover — convergence *and* a growth driver. *Watch:* post-industrial low-demand micro-markets.
+5. **Stoke-on-Trent (W Mids).** Measured #20: very low, tightly-clustered rents so Affordable Rent (80%) lands near LHA; regeneration and affordability-led in-migration support demand. *Watch:* concentration of weak-demand terraced stock — buy in sound sub-markets.
 
-*Honourable mentions:* **Sunderland** (Riverside regeneration) and **Wigan** (Greater Manchester overspill) are close behind and arguably interchangeable with #4–#5 depending on the exact per-area scores from the script.
+*Highest pure convergence but thinner demand:* **Burnley / Hyndburn / Pendle / Blackburn (East Lancs)** (measured #1/#4/#10/#16), plus **Grimsby, Scunthorpe, Rotherham** — excellent rent-risk, weaker capital-growth demand. **Blackpool** (#17) scores well but stays a *watch* for weak demand and poor older stock.
 
 ---
 
