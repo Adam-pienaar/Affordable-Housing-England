@@ -11,6 +11,9 @@ stronger for affordable-housing development or investment.
 | File | What it is |
 |---|---|
 | [`analysis/uk-rent-convergence-analysis.md`](analysis/uk-rent-convergence-analysis.md) | The report: mechanism, convergence metric, ranked areas (top 15–25), top-5 opportunities, risks, sources. |
+| [`analysis/MEASURED-RESULTS.md`](analysis/MEASURED-RESULTS.md) | **The measured ranking** computed from the real supplied datasets (97 areas), how it revises the pattern-based read, the mechanism the data exposes, and caveats. |
+| [`analysis/run_measured_ranking.py`](analysis/run_measured_ranking.py) | Pipeline that produces the measured ranking from `analysis/data/` → `measured_convergence_ranking.csv`. |
+| [`analysis/data/`](analysis/data/) | The source files used: ONS PRMS (Oct22–Sep23), DWP/VOA LHA (2026/27), RSH RP briefing (2024/25). Open Government Licence. |
 | [`analysis/HOW-TO-CHECK-THE-DATA.md`](analysis/HOW-TO-CHECK-THE-DATA.md) | **No-code, plain-English guide** for a non-technical person to find, download, open and read the official data, and do the convergence check by hand in a free spreadsheet. Start here to verify the numbers yourself. |
 | [`analysis/convergence_analysis.py`](analysis/convergence_analysis.py) | Reproducible scorer that computes exact per-area convergence scores from the live gov.uk / ONS datasets. |
 | [`analysis/METHODOLOGY.md`](analysis/METHODOLOGY.md) | Technical step-by-step runbook (uses the script) to conduct the whole study: data sources, formulas, geography reconciliation, demand overlay, provider due diligence, refresh cadence. |

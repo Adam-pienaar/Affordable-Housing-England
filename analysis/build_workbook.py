@@ -4,6 +4,8 @@
 Keeps structured/tabular data (rankings, metric definitions, verified anchors,
 sources) and omits long-form prose. Run: python analysis/build_workbook.py
 """
+import os
+import csv
 from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
@@ -20,6 +22,15 @@ WRAP = Alignment(wrap_text=True, vertical="top")
 CENTER = Alignment(horizontal="center", vertical="top")
 THIN = Side(style="thin", color="BFBFBF")
 BORDER = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
+
+
+def _num(v):
+    """Convert a CSV string to int/float where possible, else pass through."""
+    try:
+        f = float(v)
+        return int(f) if f == int(f) else f
+    except (ValueError, TypeError):
+        return v
 
 
 def style_header(ws, row, ncols):
@@ -76,7 +87,7 @@ rows = [
      "Affordable-city in-migration, ceramics/logistics jobs, city-centre regeneration",
      "Pockets of low-demand terraced stock; deprivation; benefit-tenant reliance"],
     [2, "Kingston upon Hull & East Riding", "Yorks & Humber",
-     "Sourced LHA close to market (1b GBP101.92 / 2b GBP126.92 / 3b GBP150.00 pw); tight 1-3 bed spread",
+     "Measured #5 of 97. LHA close to market (2-bed 474 vs 495/mo; align 0.96); tight 1-3 bed spread",
      "Humber offshore-wind/energy cluster, port, university, regeneration",
      "Localised low demand in older stock; flood-zone constraints"],
     [3, "Teesside (Middlesbrough/Stockton/Redcar)", "North East",
@@ -247,9 +258,10 @@ r4 = [
     ["Highest-rent region (market)", "London approx GBP 2,172/mo", "Oct 2024", "ONS (4)"],
     ["LHA basis", "30th percentile of local market rents to 30 Sep 2023", "2024/25", "DWP/VOA (1)"],
     ["LHA status 2025/26", "Frozen at 2024/25 levels", "2025/26", "GOV.UK (2)"],
-    ["Hull & East Riding LHA - 1 bed", "GBP 101.92 / wk (approx GBP 442/mo)", "2024/25", "VOA/council (6)"],
-    ["Hull & East Riding LHA - 2 bed", "GBP 126.92 / wk (approx GBP 550/mo)", "2024/25", "VOA/council (6)"],
-    ["Hull & East Riding LHA - 3 bed", "GBP 150.00 / wk (approx GBP 650/mo)", "2024/25", "VOA/council (6)"],
+    ["Hull & East Riding LHA - 1 bed", "GBP 87.45 / wk (approx GBP 379/mo)", "Apr-2024 base", "DWP/VOA LHA file (6)"],
+    ["Hull & East Riding LHA - 2 bed", "GBP 109.32 / wk (approx GBP 474/mo)", "Apr-2024 base", "DWP/VOA LHA file (6)"],
+    ["Hull & East Riding LHA - 3 bed", "GBP 126.58 / wk (approx GBP 549/mo)", "Apr-2024 base", "DWP/VOA LHA file (6)"],
+    ["Hull market median (1/2/3 bed)", "GBP 425 / 495 / 575 per month", "Oct22-Sep23", "ONS PRMS (supplied)"],
     ["Households on LA housing registers", "1.33 million (highest since 2014)", "31 Mar 2024", "MHCLG (7)"],
     ["London share of national register", "approx 25%", "2024", "MHCLG (7)"],
     ["Households in temporary accommodation", "130,890 (+11.5% YoY)", "31 Mar 2025", "MHCLG (8)"],
@@ -382,6 +394,42 @@ ws6.cell(row=nr6 + 1, column=1,
                "Organisation. Verify current pipeline/JV appetite directly before acting.").font = NOTE_FONT
 ws6.merge_cells(start_row=nr6 + 1, start_column=1, end_row=nr6 + 1, end_column=8)
 ws6.row_dimensions[nr6 + 1].height = 40
+
+# ============================ Sheet 7: Measured ranking ======================
+CSVP = os.path.join(os.path.dirname(os.path.abspath(__file__)), "measured_convergence_ranking.csv")
+if os.path.exists(CSVP):
+    ws7 = wb.create_sheet("Measured Ranking")
+    title(ws7, "MEASURED convergence ranking (from supplied ONS + LHA + RSH data)", 1, 9)
+    ws7.cell(row=2, column=1,
+             value="Computed by run_measured_ranking.py. Market rent = ONS PRMS median by LA "
+                   "(Oct 2022-Sep 2023); LHA = DWP/VOA Apr-2024 base (monthly); social = England "
+                   "benchmark GBP113.69/wk (per-LA not supplied). Rents matched to the LHA base "
+                   "window = structural convergence, not today's live gap. geo: exact = name match, "
+                   "curated = our LA->BRMA map (dominant BRMA). 97 areas scored; top 30 shown.").font = NOTE_FONT
+    ws7.merge_cells("A2:I2")
+    ws7.row_dimensions[2].height = 56
+    with open(CSVP, newline="") as fh:
+        rd = list(csv.DictReader(fh))
+    cols = [("rank", "Rank", 6), ("area", "Area (LA)", 30), ("brma", "BRMA", 20),
+            ("geo", "Geo", 9), ("sample_min", "Sample", 8),
+            ("mkt_1", "Mkt 1b", 8), ("mkt_2", "Mkt 2b", 8), ("mkt_3", "Mkt 3b", 8),
+            ("lha_2", "LHA 2b", 8), ("alignment", "Align", 8),
+            ("social_attach", "SocAtt", 8), ("compression", "Compr", 8), ("score", "Score", 8)]
+    headers = [c[1] for c in cols]
+    rows = [[(_num(r[c[0]])) for c in cols] for r in rd[:30]]
+    nr7 = write_table(ws7, 4, headers, rows,
+                      widths=[c[2] for c in cols], wrap_cols=(2, 3), highlight_top=5)
+    for rr in range(5, 5 + len(rows)):          # centre numeric columns
+        for cc in list(range(4, 14)):
+            ws7.cell(row=rr, column=cc).alignment = CENTER
+    ws7.freeze_panes = "A5"
+    ws7.cell(row=nr7, column=1,
+             value="Full 97-area table: analysis/measured_convergence_ranking.csv. "
+                   "See MEASURED-RESULTS.md for interpretation, the social-rent caveat, and how "
+                   "this revises the pattern-based ranking (e.g. East Lancs promoted, Black Country "
+                   "lowered on pure convergence).").font = NOTE_FONT
+    ws7.merge_cells(start_row=nr7, start_column=1, end_row=nr7, end_column=13)
+    ws7.row_dimensions[nr7].height = 42
 
 wb.save(OUT)
 print("wrote", OUT)

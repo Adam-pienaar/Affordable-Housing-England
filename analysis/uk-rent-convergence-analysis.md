@@ -70,14 +70,18 @@ A separate **demand/shortage overlay** (waiting-list pressure, temporary-accommo
 
 ---
 
-## 4. Worked anchor (fully sourced): Hull & East Riding
+## 4. Worked anchor (now measured from source files): Hull & East Riding
 
-Weekly LHA, 2024/25 (frozen into 2025/26): **1-bed £101.92 · 2-bed £126.92 · 3-bed £150.00**. ⁶
-Converted to monthly (×52/12): **1-bed ≈ £442 · 2-bed ≈ £550 · 3-bed ≈ £650**.
+> **Correction:** an earlier draft quoted Hull LHA as £101.92 / £126.92 / £150.00 pw from a third-party web aggregator. The **authoritative DWP/VOA LHA file** (Table 1, April-2024 rates carried forward to 2026/27) gives lower figures — see below. The government file supersedes the web figure. This is exactly why the measured run (Section 5A / `MEASURED-RESULTS.md`) matters.
 
-- The North East/Humber sits in the lowest-rent band nationally, so these LHA levels are close to local market medians — the alignment component is high.
-- Affordable Rent (80% of market) in a market this cheap lands **near or below LHA**, so a benefit-backed tenant can typically cover an Affordable Rent tenancy — the strongest possible convergence signal.
-- Social rent in the region (~£95/wk, North East ³) is a **high share (~55–60%) of market rent**, i.e. "not wildly detached."
+Weekly LHA (frozen April-2024 base): **1-bed £87.45 · 2-bed £109.32 · 3-bed £126.58**. ⁶
+Converted to monthly (×52/12): **1-bed ≈ £379 · 2-bed ≈ £474 · 3-bed ≈ £549**.
+Market median rent, same window (ONS PRMS, Oct 2022–Sep 2023): **1-bed £425 · 2-bed £495 · 3-bed £575** (sample ≈ 400).
+
+- LHA sits very close to the market median (2-bed alignment ≈ £474/£495 = **0.96**) — a strong convergence signal.
+- Affordable Rent (80% of market): 2-bed ≈ £396, **below** the £474 LHA — a benefit-backed tenant can cover it.
+- Against the national social-rent benchmark (£113.69/wk ≈ £493/mo), social rent is a **high share (~0.99)** of Hull's ≈£498 mean market rent, i.e. "not wildly detached."
+- **Measured convergence rank: #5 of 97 areas scored** (score 0.933). Hull is genuinely near the top, confirming the pattern read.
 
 Hull illustrates the pattern; the towns below share the same structural drivers.
 
