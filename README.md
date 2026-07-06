@@ -12,6 +12,8 @@ stronger for affordable-housing development or investment.
 |---|---|
 | [`analysis/uk-rent-convergence-analysis.md`](analysis/uk-rent-convergence-analysis.md) | The report: mechanism, convergence metric, ranked areas (top 15–25), top-5 opportunities, risks, sources. |
 | [`analysis/convergence_analysis.py`](analysis/convergence_analysis.py) | Reproducible scorer that computes exact per-area convergence scores from the live gov.uk / ONS datasets. |
+| [`analysis/METHODOLOGY.md`](analysis/METHODOLOGY.md) | Step-by-step runbook to conduct the whole study yourself: data sources, formulas, geography reconciliation, demand overlay, provider due diligence, refresh cadence. |
+| [`analysis/top5-area-providers.md`](analysis/top5-area-providers.md) | Operators active in the social/affordable rent stream in each top-5 area, with homes owned + RSH grades. |
 
 ## Key finding (one line)
 
