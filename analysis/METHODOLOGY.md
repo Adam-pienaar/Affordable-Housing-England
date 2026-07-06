@@ -2,6 +2,8 @@
 
 A repeatable process for finding England areas where **1–3 bed** market rent, LHA, Affordable Rent (80% market) and social rent **converge**, then shortlisting investable locations and the operators active there. Follow the phases in order. Skipping the data-provenance rules (Phase 0) is how these studies go wrong.
 
+> **Not technical?** Read [`HOW-TO-CHECK-THE-DATA.md`](HOW-TO-CHECK-THE-DATA.md) first — it's a no-code, plain-English version that shows how to find, download and read the same data and do the convergence check by hand in a free spreadsheet. This document is the fuller technical runbook that also uses the Python script.
+
 **Estimated effort:** ~2–4 days for a first full run; ~half a day to refresh once the pipeline exists.
 
 ---
