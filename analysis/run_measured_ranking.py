@@ -103,8 +103,10 @@ def load_ons_bed(sheet):
 
 def load_social():
     """Per-LA GN (social rent) net weekly rent by bedsize, weighted PRP+LARP.
-    Returns {LA E-code: {'1': monthly, '2': monthly, '3': monthly}}."""
+    Returns ({LA E-code: {'1':monthly,'2':..,'3':..}}, {LA E-code: region})."""
     df = pd.read_excel(SOCIAL, sheet_name="Flat_File")
+    region = {str(r.LA_Code).strip(): str(r.Region).strip()
+              for r in df.itertuples() if pd.notna(r.Region)}
     df = df[(df["Type"] == "GN") & (df["Bedsize"].isin(["1Bd", "2Bd", "3Bd"]))].copy()
     for c in ["SDR_Own", "SDR_AVRENT", "LADR_Own", "LADR_AVRENT"]:
         df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
@@ -118,7 +120,7 @@ def load_social():
         wk = num / den
         if wk > 0:
             out.setdefault(str(r.LA_Code).strip(), {})[bedmap[r.Bedsize]] = wk * W2M
-    return out
+    return out, region
 
 
 def load_lha():
@@ -148,7 +150,7 @@ def cv(vals):
 def main():
     m1, m2, m3 = load_ons_bed("Table2.3"), load_ons_bed("Table2.4"), load_ons_bed("Table2.5")
     lha = load_lha()
-    social = load_social()
+    social, region_by_code = load_social()
     for b in set(LA_TO_BRMA.values()):
         assert b in lha, f"curated BRMA not found in LHA file: {b}"
     lha_norm = {norm(k): k for k in lha}
@@ -193,7 +195,8 @@ def main():
         score = (W_ALIGN * alignment + W_SOCIAL * social_attach + W_COMPRESS * compression)
 
         rows.append({
-            "area": area, "brma": brma, "geo": how, "soc_src": soc_src, "sample_min": int(cnt),
+            "area": area, "code": code, "region": region_by_code.get(code, ""),
+            "brma": brma, "geo": how, "soc_src": soc_src, "sample_min": int(cnt),
             "mkt_1": round(market["1"]), "mkt_2": round(market["2"]), "mkt_3": round(market["3"]),
             "lha_1": round(L["1"]), "lha_2": round(L["2"]), "lha_3": round(L["3"]),
             "soc_1": round(soc_b["1"]), "soc_2": round(soc_b["2"]), "soc_3": round(soc_b["3"]),
