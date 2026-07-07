@@ -142,13 +142,13 @@ doc.add_page_break()
 # ---- EXECUTIVE SUMMARY ----
 h1(doc, "Executive summary")
 h2(doc, "What this is")
-bullet(doc, "A screen for English areas where all four rent levels for 1–3 bed homes sit close together — lower rent risk, stronger housing-benefit alignment.")
-bullet(doc, "Four layers compared: market rent, LHA (benefit cap), Affordable Rent (80% of market), and social rent.")
+bullet(doc, "A screen for English areas where all four rent levels for 1–3 bed homes sit close together — lower rent risk, and housing benefit that covers more of the rent.")
+bullet(doc, "Four rent levels compared: market rent; LHA (the most housing benefit / Universal Credit pays towards rent); Affordable Rent (up to 80% of market); and social rent.")
 bullet(doc, "97 local authorities scored from official open data; studios and shared housing excluded.")
 h2(doc, "Headline finding")
-bullet(doc, "Convergence is concentrated in the low-cost North & Midlands; the least-converged areas are all in the high-rent South.", "Geography:")
+bullet(doc, "Convergence is concentrated in the low-cost North & Midlands; the least-converged areas are all in the higher-rent South.", "Geography:")
 bullet(doc, "Every one of the top 25 areas is northern or Midlands; the bottom five are Cambridge, Brighton, Bristol, Exeter, Oxford.")
-bullet(doc, "The driver is social-rent attachment — near-uniform social rent only sits close to market rent where market rent is low.", "Why:")
+bullet(doc, "Social rents barely vary across England, so they only sit close to market rents where market rents are low.", "Why:")
 h2(doc, "Top 5 investment picks (convergence + demand)")
 bullet(doc, "Teesside (Hartlepool / Redcar / Middlesbrough) · Kingston upon Hull · Doncaster · Sunderland · Stoke-on-Trent.")
 img(doc, "fig1_top_areas.png", 6.2)
@@ -156,15 +156,15 @@ doc.add_page_break()
 
 # ---- THE IDEA ----
 h1(doc, "The convergence idea")
-bullet(doc, "LHA close to market rent — benefit-backed demand is well supported.", "Aligned when:")
-bullet(doc, "Affordable Rent (80% of market) sits near or below LHA — coverable by a benefit tenant.")
-bullet(doc, "Social rent not wildly detached from market rent.")
-bullet(doc, "1/2/3-bed rents relatively compressed (low variation).")
-para(doc, "Score = 0.40 × LHA-alignment + 0.30 × social-attachment + 0.30 × rent-compression (0–1; higher = tighter).", 9.5, GREY, italic=True)
-h2(doc, "The mechanism the data exposes")
-bullet(doc, "LHA-to-market alignment is high almost everywhere — LHA is the 30th percentile by design (even Cambridge, Guildford score well).")
-bullet(doc, "Social rent barely varies nationally (~£380–£490/mo here) but market rent ranges ~£475–£1,400.")
-bullet(doc, "So four-layer convergence needs a low-rent market — the northern signature.", "Result:")
+bullet(doc, "LHA is close to market rent — so housing-benefit demand is well supported.", "Aligned when:")
+bullet(doc, "Affordable Rent (up to 80% of market) sits near or below LHA — so a tenant on housing benefit / Universal Credit can cover it.")
+bullet(doc, "Social rent not far below market rent.")
+bullet(doc, "The 1/2/3-bed rents are fairly consistent (low variation).")
+para(doc, "Score (0–1, higher = tighter): 40% how close LHA is to market rent, 30% how close social rent is to market rent, 30% how consistent the 1–3 bed rents are.", 9.5, GREY, italic=True)
+h2(doc, "The pattern the data reveals")
+bullet(doc, "LHA sits close to market rent almost everywhere — it is set at the 30th percentile of local rents, so even Cambridge and Guildford score well on this alone.")
+bullet(doc, "Social rent barely varies nationally (~£380–£490/mo here), while market rent ranges from ~£475 to ~£1,400.")
+bullet(doc, "So all four rent levels only line up where market rents are low — the northern signature.", "Result:")
 img(doc, "fig2_mechanism.png", 6.2)
 doc.add_page_break()
 
@@ -178,8 +178,9 @@ for _, r in df.head(20).iterrows():
     rows.append([int(r["rank"]), clean(r["area"]), region,
                  f"£{int(r['mkt_2'])}", f"£{int(r['lha_2'])}", f"£{int(r['soc_2'])}", f"{r['score']:.3f}"])
 table(doc, headers, rows, widths=[0.3, 1.75, 1.35, 0.75, 0.75, 0.85, 0.6], fs=8.5)
-para(doc, "Rents matched to the LHA reference window (Oct 2022–Sep 2023); measures structural convergence, "
-          "not today's live gap. Full 97-area table in the accompanying spreadsheet/CSV.", 8.5, GREY, italic=True)
+para(doc, "Market rents are from the same period the frozen LHA is based on (Oct 2022–Sep 2023), so this shows how "
+          "closely the layers are designed to sit — today's gap between market rent and LHA is wider. "
+          "Full 97-area table in the accompanying spreadsheet/CSV.", 8.5, GREY, italic=True)
 doc.add_paragraph()
 h2(doc, "Regional pattern")
 img(doc, "fig4_regional.png", 5.9)
@@ -200,7 +201,7 @@ picks = [
      "Strong convergence with a genuine logistics / rail employment base and Sheffield city-region pull.",
      "Post-industrial low-demand micro-markets."),
     ("4 · Sunderland  (#19)",
-     "Strong convergence plus Riverside regeneration and automotive employment.",
+     "Strong convergence plus the Riverside Sunderland regeneration and automotive employment.",
      "Peripheral estates weaker; single-employer exposure."),
     ("5 · Stoke-on-Trent  (#20)",
      "Strong convergence with regeneration and affordability-led in-migration.",
@@ -244,18 +245,18 @@ doc.add_page_break()
 h1(doc, "Method, data & caveats")
 h2(doc, "Data sources (official, open)")
 bullet(doc, "Market rent — ONS/VOA Private Rental Market Statistics: median monthly rent by bedroom, by local authority (Oct 2022–Sep 2023).")
-bullet(doc, "LHA — DWP/VOA April-2024 rates (frozen), 1/2/3-bed, by BRMA.")
-bullet(doc, "Social rent — Regulator of Social Housing 2024/25: per-LA, per-bedsize general-needs rent.")
-bullet(doc, "Affordable Rent — derived as 80% of market (statutory definition).")
+bullet(doc, "LHA — DWP/VOA rates set in April 2024 and frozen since (carried forward to 2026/27), 1/2/3-bed, by Broad Rental Market Area.")
+bullet(doc, "Social rent — Regulator of Social Housing 2024/25: per-local-authority, per-bed-size general-needs rent.")
+bullet(doc, "Affordable Rent — estimated at 80% of market (the policy ceiling is 'up to 80%').")
 h2(doc, "How it was built")
 bullet(doc, "Three layers joined per area; convergence score computed and ranked (see score formula).")
 bullet(doc, "92 of 97 areas use local social rent; 5 use the England average as fallback.")
 bullet(doc, "LA→BRMA geography: 56 exact matches + 37 web-verified + 4 genuinely multi-BRMA (flagged).")
 h2(doc, "Caveats")
-bullet(doc, "Structural, not live — rents matched to the frozen-LHA window; today's market-vs-LHA gap is wider.")
-bullet(doc, "A convergence screen, not a demand / yield / asset-quality model — pair with local demand work.")
-bullet(doc, "Small-sample areas flagged in the data; treat cautiously.")
-bullet(doc, "97 areas scored (not all ~300) — full national coverage needs the official LA→BRMA lookup.")
+bullet(doc, "Shows the designed alignment, not the current gap — rents are from the period the frozen LHA is based on; today's market-vs-LHA gap is wider.")
+bullet(doc, "A rent-alignment screen, not a demand, yield or building-quality model — pair with local demand work.")
+bullet(doc, "Small-sample areas are flagged in the data; treat cautiously.")
+bullet(doc, "97 areas scored (not all ~300) — full national coverage needs the official local-authority-to-BRMA lookup.")
 h2(doc, "Sources")
 para(doc, "ONS Private Rental Market Statistics · DWP/VOA Local Housing Allowance rates · Regulator of Social Housing, "
           "Registered provider social housing stock and rents 2024/25 · RSH regulatory judgements (provider grades). "

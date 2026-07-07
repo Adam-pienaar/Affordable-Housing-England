@@ -86,9 +86,9 @@ for name, dx, dy in [("Hartlepool UA", 5, 5), ("Kingston upon Hull, City of UA",
         x, y = r.iloc[0]["alignment"], r.iloc[0]["social_attach"]
         ax.annotate(clean_name(name), (x, y), textcoords="offset points",
                     xytext=(dx, dy), fontsize=8, color=INK)
-ax.set_xlabel("LHA-to-market alignment  (high almost everywhere)")
-ax.set_ylabel("Social-rent attachment  (social ÷ market)")
-ax.set_title("Why the North converges: alignment is universal, social attachment is not",
+ax.set_xlabel("How close LHA is to market rent  (high almost everywhere)")
+ax.set_ylabel("How close social rent is to market  (social ÷ market)")
+ax.set_title("Why the North converges: LHA is close to market everywhere; social rent isn't",
              fontweight="bold", loc="left", fontsize=11, pad=10)
 ax.legend(loc="lower left", frameon=False, fontsize=9)
 tidy(ax)
